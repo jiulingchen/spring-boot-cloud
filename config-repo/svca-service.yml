@@ -4,6 +4,9 @@ server:
 name: zhangxd
 
 eureka:
+  client:
+    service-url:
+      defaultZone: 'http://user:${REGISTRY_SERVER_PASSWORD:password}@eureka1:8761/eureka/,http://user:${REGISTRY_SERVER_PASSWORD:password}@eureka2:8762/eureka/'
   instance:
     metadata-map:
       user.name: ${security.user.name}
